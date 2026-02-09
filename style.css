@@ -177,3 +177,64 @@ body { font-family: 'Montserrat', sans-serif; overflow-x:hidden; scroll-behavior
     color: #C5A028; /* Gold color */
     letter-spacing: 1px;
 }
+
+
+/* --- MOBILE RESPONSIVENESS FIX --- */
+
+@media (max-width: 768px) {
+    /* 1. Shrink the Nav Bar and Logo */
+    .glass-nav {
+        height: 70px !important;
+    }
+
+    .nav-logo {
+        height: 40px !important; /* Smaller logo for mobile */
+    }
+
+    .logo-text {
+        font-size: 1rem !important;
+    }
+
+    .slogan-text {
+        display: none; /* Hide slogan on small phones to save space */
+    }
+
+    /* 2. Hide the Links and turn them into a vertical menu */
+    .nav-links {
+        position: fixed;
+        right: -100%; /* Hidden off-screen by default */
+        top: 70px;
+        flex-direction: column;
+        background: #8B0000; /* Matches your crimson bar */
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.2);
+        padding: 20px 0;
+    }
+
+    .nav-links.active {
+        right: 0; /* Slides into view when clicked */
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+    }
+
+    /* 3. Show the Burger Menu Icon */
+    .burger {
+        display: block !important;
+        cursor: pointer;
+        color: white;
+        font-size: 1.5rem;
+    }
+}
+
+/* Ensure burger is hidden on Desktop */
+@media (min-width: 769px) {
+    .burger {
+        display: none;
+    }
+}
+
+
