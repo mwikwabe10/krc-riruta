@@ -8,10 +8,11 @@ function openModal(src) {
 <script>
 function toggleMenu() {
     const navLinks = document.getElementById("navLinks");
+    // This adds or removes the 'active' class we styled in CSS
     navLinks.classList.toggle("active");
 }
 
-// Close menu when a link is clicked
+// Automatically close the menu when you click a link
 document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
         document.getElementById("navLinks").classList.remove("active");
