@@ -181,45 +181,49 @@ body { font-family: 'Montserrat', sans-serif; overflow-x:hidden; scroll-behavior
 
 /* --- MOBILE REPAIRS --- */
 @media (max-width: 768px) {
-    .nav-flex {
-        justify-content: space-between;
-        padding: 0 15px;
+    /* 1. Prevent the logo text from breaking into lines */
+    .brand-link {
+        width: 100%;
+        justify-content: flex-start !important;
+        gap: 8px !important;
     }
 
-    /* Shrink logo so it is visible on small screens */
     .nav-logo {
-        height: 40px !important; 
-        width: auto;
+        height: 45px !important; /* Smaller logo for mobile */
     }
 
-    .brand-text-group {
-        transform: scale(0.8); /* Shrinks text slightly to fit */
-        margin-left: -10px;
+    .logo-text {
+        font-size: 1.1rem !important;
+        white-space: nowrap; /* Forces KRC RIRUTA to stay on one line */
     }
 
-    /* Force the menu to hide off-screen */
+    /* 2. Hide the menu links into a side drawer */
     .nav-links {
         position: fixed;
-        right: -100%; 
+        right: -100%; /* Hidden off-screen */
         top: 0;
         height: 100vh;
         width: 70%;
-        background: #8B0000; /* Solid crimson */
+        background: #8B0000; /* Matching crimson */
         flex-direction: column;
         justify-content: center;
-        transition: 0.4s ease-in-out;
-        z-index: 999;
+        transition: 0.3s ease-in-out;
+        z-index: 1000;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.3);
     }
 
-    /* This class is added by JavaScript */
     .nav-links.active {
-        right: 0;
+        right: 0; /* Slides in when active */
     }
 
+    .nav-links li {
+        margin: 20px 0;
+    }
+
+    /* 3. Show the burger menu icon */
     .burger {
         display: block !important;
+        cursor: pointer;
         z-index: 1001;
     }
 }
-
-
