@@ -179,61 +179,46 @@ body { font-family: 'Montserrat', sans-serif; overflow-x:hidden; scroll-behavior
 }
 
 
-/* --- MOBILE RESPONSIVENESS FIX --- */
-
+/* --- MOBILE REPAIRS --- */
 @media (max-width: 768px) {
-    /* 1. Shrink the Nav Bar and Logo */
-    .glass-nav {
-        height: 70px !important;
+    .nav-flex {
+        justify-content: space-between;
+        padding: 0 15px;
     }
 
+    /* Shrink logo so it is visible on small screens */
     .nav-logo {
-        height: 40px !important; /* Smaller logo for mobile */
+        height: 40px !important; 
+        width: auto;
     }
 
-    .logo-text {
-        font-size: 1rem !important;
+    .brand-text-group {
+        transform: scale(0.8); /* Shrinks text slightly to fit */
+        margin-left: -10px;
     }
 
-    .slogan-text {
-        display: none; /* Hide slogan on small phones to save space */
-    }
-
-    /* 2. Hide the Links and turn them into a vertical menu */
+    /* Force the menu to hide off-screen */
     .nav-links {
         position: fixed;
-        right: -100%; /* Hidden off-screen by default */
-        top: 70px;
+        right: -100%; 
+        top: 0;
+        height: 100vh;
+        width: 70%;
+        background: #8B0000; /* Solid crimson */
         flex-direction: column;
-        background: #8B0000; /* Matches your crimson bar */
-        width: 100%;
-        text-align: center;
-        transition: 0.3s;
-        box-shadow: 0 10px 10px rgba(0,0,0,0.2);
-        padding: 20px 0;
+        justify-content: center;
+        transition: 0.4s ease-in-out;
+        z-index: 999;
     }
 
+    /* This class is added by JavaScript */
     .nav-links.active {
-        right: 0; /* Slides into view when clicked */
+        right: 0;
     }
 
-    .nav-links li {
-        margin: 15px 0;
-    }
-
-    /* 3. Show the Burger Menu Icon */
     .burger {
         display: block !important;
-        cursor: pointer;
-        color: white;
-        font-size: 1.5rem;
-    }
-}
-
-/* Ensure burger is hidden on Desktop */
-@media (min-width: 769px) {
-    .burger {
-        display: none;
+        z-index: 1001;
     }
 }
 
