@@ -277,19 +277,11 @@
         b.onclick = () => window.scrollTo({top:0, behavior:'smooth'});
     </script>
 <script>
-function toggleMenu() {
-    const navLinks = document.getElementById("navLinks");
-    // This adds or removes the 'active' class we styled in CSS
-    navLinks.classList.toggle("active");
-}
-
-// Automatically close the menu when you click a link
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-        document.getElementById("navLinks").classList.remove("active");
-    });
-});
-</script>
+        function toggleMenu() {
+            const navLinks = document.getElementById("navLinks");
+            navLinks.classList.toggle("active");
+        }
+    </script>
     
 </body>
 </html>
