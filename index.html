@@ -284,5 +284,21 @@
         window.onscroll = () => b.style.display = (window.scrollY > 300) ? "block" : "none";
         b.onclick = () => window.scrollTo({top:0, behavior:'smooth'});
     </script>
+<script>
+function toggleMenu() {
+    const navLinks = document.getElementById("navLinks");
+    navLinks.classList.toggle("active");
+}
+
+// Close menu when a link is clicked
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        document.getElementById("navLinks").classList.remove("active");
+    });
+});
+</script>
+    
 </body>
 </html>
+
+
