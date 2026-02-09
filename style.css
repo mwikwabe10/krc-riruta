@@ -179,51 +179,39 @@ body { font-family: 'Montserrat', sans-serif; overflow-x:hidden; scroll-behavior
 }
 
 
-/* --- MOBILE REPAIRS --- */
-@media (max-width: 768px) {
-    /* 1. Prevent the logo text from breaking into lines */
-    .brand-link {
-        width: 100%;
-        justify-content: flex-start !important;
-        gap: 8px !important;
-    }
-
-    .nav-logo {
-        height: 45px !important; /* Smaller logo for mobile */
-    }
-
-    .logo-text {
-        font-size: 1.1rem !important;
-        white-space: nowrap; /* Forces KRC RIRUTA to stay on one line */
-    }
-
-    /* 2. Hide the menu links into a side drawer */
+/* MOBILE OVERRIDE - 768px and below */
+@media screen and (max-width: 768px) {
+    /* 1. Hide the links by default */
     .nav-links {
-        position: fixed;
-        right: -100%; /* Hidden off-screen */
+        position: fixed !important;
+        right: -100% !important; /* Move it completely off-screen */
         top: 0;
         height: 100vh;
-        width: 70%;
-        background: #8B0000; /* Matching crimson */
-        flex-direction: column;
+        width: 75%;
+        background-color: #8B0000 !important; /* Solid color so you can't see through it */
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center;
         justify-content: center;
-        transition: 0.3s ease-in-out;
+        transition: 0.4s all ease-in-out;
         z-index: 1000;
-        box-shadow: -5px 0 15px rgba(0,0,0,0.3);
     }
 
+    /* 2. When the JS adds the 'active' class, slide it in */
     .nav-links.active {
-        right: 0; /* Slides in when active */
+        right: 0 !important;
     }
 
-    .nav-links li {
-        margin: 20px 0;
-    }
-
-    /* 3. Show the burger menu icon */
+    /* 3. Make sure the burger is actually visible */
     .burger {
         display: block !important;
         cursor: pointer;
         z-index: 1001;
+    }
+
+    /* 4. Fix the Logo so it doesn't get squashed */
+    .nav-flex {
+        justify-content: space-between !important;
+        width: 100%;
     }
 }
